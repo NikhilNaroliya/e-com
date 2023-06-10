@@ -8,6 +8,7 @@ const Nav=()=>{
             <li><Link  className='nav-link' to="/">Home</Link></li>
             <li><Link className='nav-link' to="/add">Add Product</Link></li>
             <li><Link  className='nav-link'to="/update">Update Product</Link></li>
+            <li><Link  className='nav-link'to="/signup">SignUp</Link></li>
             <li><Link  className='nav-link'to="/logout">Logout</Link></li>
             <li><Link  className='nav-link'to="/profile">Profile</Link></li>
         </ul>

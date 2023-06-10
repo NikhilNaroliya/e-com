@@ -10,7 +10,7 @@
   background-color: #61dafb;
   position: absolute;
   width: 100%;
-  margin-top: -2rem;
+  margin-top: 0rem;
 
 }
 .nav-bar li {
@@ -31,6 +31,37 @@
   text-align: center;
   width: 100%;
   background-color: #61dafb;
+}
+.register{
+  margin-top: 15rem;
+ position: absolute;
+ justify-content: center;
+ display: flex;
+ flex-direction: column;
+ border: 1px solid skyblue;
+ align-items: center;
+ width: 300px;
+ padding: 1rem;
+ margin-left: 20rem;
+ border-radius: 0.4rem;
+ 
+}
+.inputBox{
+  padding: 1rem;
+  margin: 0.5rem;
+}
+#signup-btn{
+  border: #61dafb;
+  border: 2px solid skyblue;
+  color: #61dafb;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  width: 7rem;
+
+}
+#h4-register{
+  color: #61dafb;
 }
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

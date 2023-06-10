@@ -3,6 +3,7 @@ import './App.css';
 import Nav from './comonents/Nav';
 import {Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 import Footer from './comonents/Footer';
+import SignUp from './comonents/SignUp';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Route path='/add' element={<h4>Add product page</h4>}/>
       <Route path='/profile' element={<h4>view profile </h4>}/>
       <Route path='/logout' element={<h4>Logout page</h4>}/>
+      <Route path='/signup' element={<SignUp/>}/>
 
       </Routes>
       </Router>

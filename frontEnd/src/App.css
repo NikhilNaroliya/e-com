@@ -51,6 +51,7 @@
   border-radius: 0.4rem;
 }
 #signup-btn{
+  cursor: pointer;
   border: #61dafb;
   border: 2px solid skyblue;
   color: #61dafb;
@@ -60,6 +61,13 @@
   width: 7rem;
   margin-top: 1rem;
 
+}
+.invalid-input{
+  display: block;
+  color: red;
+  margin-left: -3rem;
+
+  margin-top: -10px;
 }
 #h4-register{
   color: #61dafb;

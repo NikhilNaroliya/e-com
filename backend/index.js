@@ -1,7 +1,7 @@
 // using cors to fix backend issue cors
 const express=require('express')
 require('./db/config')
-
+const Product=require('./db/Product')
 const User=require('./db/User')
 
 const app=express();
@@ -42,6 +42,13 @@ app.post('/login',async(req,resp)=>{
    else{
     resp.send({result:"enter valid fields"})
    }
+})
+app.post('/add-product',async(req,resp)=>{
+ 
+     let product=new Product(req.body)
+     let result=await product.save();
+     resp.send(result);
+     
 })
 
 app.listen(4500)

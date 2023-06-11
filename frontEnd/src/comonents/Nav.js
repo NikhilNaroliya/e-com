@@ -19,7 +19,7 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/add">
+          <Link className="nav-link" to="/add-product">
             Add Product
           </Link>
         </li>

@@ -5,6 +5,7 @@ import {Route, BrowserRouter as Router, Routes} from 'react-router-dom'
 import Footer from './comonents/Footer';
 import SignUp from './comonents/SignUp';
 import PrivateComponent from './comonents/PrivateComponent';
+import Login from './comonents/Login';
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
     
       </Route>
       <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/login' element={<Login/>}/>
       
       </Routes>
       </Router>

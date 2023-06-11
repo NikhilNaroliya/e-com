@@ -13,11 +13,35 @@ app.use(cors({
 
 app.use(express.json())
 
+// signup api
+
 app.post('/signup',async (req,resp)=>{
     let user=new User(req.body)
     let result=await user.save();
+    result=result.toObject();
+    delete result.password
     resp.send(result)
     console.log(result)
+})
+
+// login api 
+
+app.post('/login',async(req,resp)=>{
+   if(req.body.password && req.body.email)
+   {
+    let user= await User.findOne(req.body).select('-password')
+     if(user)
+     {
+        resp.send(user)
+     }
+     else
+     {
+        resp.send({result:"user not found"})
+     }
+   }
+   else{
+    resp.send({result:"enter valid fields"})
+   }
 })
 
 app.listen(4500)

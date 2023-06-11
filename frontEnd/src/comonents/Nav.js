@@ -11,7 +11,7 @@ const Nav = () => {
 
   return (
     <>
-      {/* <h1>NavBar</h1> */}
+     {auth?
       <ul className="nav-bar">
         <li>
           <Link className="nav-link" to="/">
@@ -28,10 +28,7 @@ const Nav = () => {
             Update Product
           </Link>
         </li>
-        <li>
-         
-          
-        </li>
+        <li></li>
         <li></li>
         <li>
           <Link className="nav-link" to="/profile">
@@ -39,23 +36,31 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          {auth ? (
-            <Link onClick={logout} className="nav-link" to="/login">
-              Logout
+            
+        <Link onClick={logout} className="nav-link" to="/login">
+              Logout 
             </Link>
-          ) : (<>
-            <Link className="nav-link" to="/login">
-              Login
-            </Link>
-            <li>
-            <Link className="nav-link" to="/signup">
-              SignUp
-            </Link>
-            </li>
-            </>
-          )}
+
         </li>
+   
       </ul>
+          :
+          <ul className="nav-bar nav-right">
+          
+         
+            <>
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+              <li>
+                <Link className="nav-link" to="/signup">
+                  SignUp
+                </Link>
+              </li>
+            </>
+        
+        
+        </ul>   }
     </>
   );
 };

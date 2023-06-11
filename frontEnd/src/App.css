@@ -24,6 +24,10 @@
   width: 100%;
   background-color: #61dafb;
 }
+.nav-right{
+  text-align: right;
+  margin-left: -2.5rem;
+}
 .register{
   
  position: relative;
@@ -43,6 +47,8 @@
 .inputBox{
   padding: 1rem;
   margin: 0.5rem;
+  border-color: #61dafb;
+  border-radius: 0.4rem;
 }
 #signup-btn{
   border: #61dafb;
@@ -52,6 +58,7 @@
   border-radius: 0.3rem;
   padding: 0.5rem;
   width: 7rem;
+  margin-top: 1rem;
 
 }
 #h4-register{

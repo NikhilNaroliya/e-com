@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
  const SignUp=()=>{
@@ -7,6 +7,16 @@ import { useNavigate } from "react-router-dom";
     let[password,setPassword]=useState("")
 
     const navigate=useNavigate()
+
+    useEffect(()=>{
+        const auth=localStorage.getItem('user')
+        if(auth)
+        {
+            navigate('/')
+        }
+    })
+
+
 
     const collectData= async()=>{
         console.log(email,password,name)
@@ -25,6 +35,8 @@ import { useNavigate } from "react-router-dom";
         
         result=await result.json()
         console.log('result is'+{...result}) 
+
+         localStorage.setItem('user',JSON.stringify(result))
 
         if(result)
         {

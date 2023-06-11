@@ -1,14 +1,6 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 .nav-bar{
   background-color: #61dafb;
-  position: absolute;
+  position: relative;
   width: 100%;
   margin-top: 0rem;
 
@@ -33,16 +25,18 @@
   background-color: #61dafb;
 }
 .register{
-  margin-top: 15rem;
- position: absolute;
- justify-content: center;
+  
+ position: relative;
+ margin: auto;
+ width: 300px;
+
  display: flex;
+ justify-content: center;
  flex-direction: column;
  border: 1px solid skyblue;
  align-items: center;
- width: 300px;
  padding: 1rem;
- margin-left: 20rem;
+ 
  border-radius: 0.4rem;
  
 }

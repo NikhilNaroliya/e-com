@@ -7,6 +7,8 @@ import SignUp from './comonents/SignUp';
 import PrivateComponent from './comonents/PrivateComponent';
 import AddProduct from './comonents/AddProduct'
 import Login from './comonents/Login';
+import ProductList from './comonents/ProductList';
+import UpdateProduct from './comonents/UpdateProduct';
 function App() {
   return (
     <div className="App">
@@ -14,13 +16,14 @@ function App() {
         <Nav/>
         <Routes>
         <Route element={<PrivateComponent/>}>
-      <Route path='/' element={<h4>Home page</h4>}/>
-      <Route path='/update' element={<h4>Update page</h4>}/>
+      <Route path='/' element={<ProductList/>}/>
+      <Route path='/update/:id' element={<UpdateProduct/>}/>
       <Route path='/add-product' element={<AddProduct/>}/>
       <Route path='/profile' element={<h4>view profile </h4>}/>
       <Route path='/logout' element={<h4>Logout page</h4>}/>
     
       </Route>
+      
       <Route path='/signup' element={<SignUp/>}/>
       <Route path='/login' element={<Login/>}/>
       

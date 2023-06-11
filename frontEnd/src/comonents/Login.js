@@ -22,7 +22,7 @@ import { useNavigate } from "react-router-dom";
         console.log(email,password)
         console.log('function called')
         
-        let result=await fetch('http://localhost:4500/signup',{
+        let result=await fetch('http://localhost:4500/login',{
             method:'post',
             mode:'cors',
             body:JSON.stringify({email,password}),
@@ -36,11 +36,16 @@ import { useNavigate } from "react-router-dom";
         result=await result.json()
         console.log('result is'+{...result}) 
 
-         localStorage.setItem('user',JSON.stringify(result))
+        
 
-        if(result)
+        if(result.name)
         {
+            localStorage.setItem('user',JSON.stringify(result))
             navigate('/')
+        }
+        else
+        {
+            alert('Enter correct fields')
         }
     }
     // collectData()
@@ -53,7 +58,7 @@ import { useNavigate } from "react-router-dom";
             <input className="inputBox"  value={email} onChange={(e)=>setEmail(e.target.value)} type="text" placeholder="enter email" />
 
             <input  value={password} onChange={(e)=>setPassword(e.target.value)}  className="inputBox" type="password" placeholder="enter password " />
-            <button onClick={()=>collectData()} id="signup-btn" >Sign Up</button>
+            <button onClick={()=>collectData()} id="signup-btn" >Login</button>
         </div>
     )
 

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
  const SignUp=()=>{
+  
     let [name,setName]=useState("");
     let [email,setEmail]=useState("");
     let[password,setPassword]=useState("")
@@ -13,6 +14,7 @@ import { useNavigate } from "react-router-dom";
         if(auth)
         {
             navigate('/')
+            
         }
     })
 
@@ -41,6 +43,7 @@ import { useNavigate } from "react-router-dom";
         if(result)
         {
             navigate('/')
+
         }
     }
     // collectData()

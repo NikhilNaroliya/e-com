@@ -3,10 +3,12 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 const Nav = () => {
   const auth = localStorage.getItem("user");
   const navigate = useNavigate();
+
   const logout = () => {
     localStorage.clear();
     navigate("/signup");
   };
+
   return (
     <>
       {/* <h1>NavBar</h1> */}
@@ -27,15 +29,8 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          {auth ? (
-            <Link onClick={logout} className="nav-link" to="/signup">
-              Logout
-            </Link>
-          ) : (
-            <Link className="nav-link" to="/signup">
-              SignUp
-            </Link>
-          )}
+         
+          
         </li>
         <li></li>
         <li>
@@ -44,9 +39,21 @@ const Nav = () => {
           </Link>
         </li>
         <li>
-          <Link className="nav-link" to="/login">
-            Login
-          </Link>
+          {auth ? (
+            <Link onClick={logout} className="nav-link" to="/login">
+              Logout
+            </Link>
+          ) : (<>
+            <Link className="nav-link" to="/login">
+              Login
+            </Link>
+            <li>
+            <Link className="nav-link" to="/signup">
+              SignUp
+            </Link>
+            </li>
+            </>
+          )}
         </li>
       </ul>
     </>

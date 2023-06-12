@@ -3,7 +3,8 @@ const express=require('express')
 require('./db/config')
 const Product=require('./db/Product')
 const User=require('./db/User')
-
+const Jwt=require('jsonwebtoken')
+const JwtKey='e-com1'
 const app=express();
 
 const cors=require('cors')
@@ -20,8 +21,13 @@ app.post('/signup',async (req,resp)=>{
     let result=await user.save();
     result=result.toObject();
     delete result.password
-    resp.send(result)
-    console.log(result)
+    Jwt.sign({result}, JwtKey, {expiresIn:"2h"},(err,token)=>{
+        if(err){
+            resp.send("Something went wrong")  
+        }
+        resp.send({result,auth:token})
+    })
+
 })
 
 // login api 
@@ -30,10 +36,14 @@ app.post('/login',async(req,resp)=>{
    if(req.body.password && req.body.email)
    {
     let user= await User.findOne(req.body).select('-password')
-     if(user)
-     {
-        resp.send(user)
-     }
+    if (user) {
+        Jwt.sign({user}, JwtKey, {expiresIn:"2h"},(err,token)=>{
+            if(err){
+                resp.send("Something went wrong")  
+            }
+            resp.send({user,auth:token})
+        })
+    }
      else
      {
         resp.send({result:"user not found"})

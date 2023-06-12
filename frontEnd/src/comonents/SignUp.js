@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { json, useNavigate } from "react-router-dom";
 
  const SignUp=()=>{
   
@@ -39,7 +39,7 @@ import { useNavigate } from "react-router-dom";
         console.log('result is'+{...result}) 
 
          localStorage.setItem('user',JSON.stringify(result))
-
+           localStorage.setItem('token',JSON.stringify(result.auth))
         if(result)
         {
             navigate('/')

@@ -50,6 +50,25 @@
   border-color: #61dafb;
   border-radius: 0.4rem;
 }
+#delete-btn{
+  border: 1px solid red;
+  color: red;
+  background-color: white;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+#update-link{
+  text-decoration: none;
+  
+  border: 1px solid #61dafb ; 
+  margin: 0.5rem;
+  border-radius: 0.3rem;
+  font-size: small;
+  color: #61dafb;
+  padding: 0.1rem;
+  
+}
 #signup-btn{
   cursor: pointer;
   border: #61dafb;

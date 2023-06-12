@@ -40,8 +40,8 @@ const UpdateProduct = () => {
     }
 
     return (
-        <div className='product register '>
-            <h1 style={{color:"skyblue"}}>Update Product</h1>
+        <div className='product register'>
+            <h1 style={{color:"#61dafb"}}>Update Product</h1>
             <input type="text" placeholder='Enter product name' className='inputBox'
                 value={name} onChange={(e) => { setName(e.target.value) }}
             />

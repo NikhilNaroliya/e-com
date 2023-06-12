@@ -23,11 +23,11 @@ const Nav = () => {
             Add Product
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link className="nav-link" to="/update">
             Update Product
           </Link>
-        </li>
+        </li> */}
         <li></li>
         <li></li>
         <li>
